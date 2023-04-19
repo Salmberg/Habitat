@@ -18,6 +18,7 @@
 		CB9BB3FB29EFFF890075F06F /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = CB9BB3FA29EFFF890075F06F /* FirebaseFirestore */; };
 		CB9BB3FD29EFFF890075F06F /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CB9BB3FC29EFFF890075F06F /* FirebaseFirestoreSwift */; };
 		CB9BB40A29F0067D0075F06F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB9BB40929F0067D0075F06F /* GoogleService-Info.plist */; };
+		CB9BB40D29F02B340075F06F /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9BB40C29F02B340075F06F /* Habit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		CB9BB3E929EFFA810075F06F /* HabitatUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitatUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		CB9BB40629F0050A0075F06F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		CB9BB40929F0067D0075F06F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CB9BB40C29F02B340075F06F /* Habit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 		CB9BB3CB29EFFA800075F06F /* Habitat */ = {
 			isa = PBXGroup;
 			children = (
+				CB9BB40B29F02B210075F06F /* Model */,
 				CB9BB40929F0067D0075F06F /* GoogleService-Info.plist */,
 				CB9BB40629F0050A0075F06F /* Info.plist */,
 				CB9BB3CC29EFFA800075F06F /* HabitatApp.swift */,
@@ -136,6 +139,14 @@
 				CB9BB3E929EFFA810075F06F /* HabitatUITestsLaunchTests.swift */,
 			);
 			path = HabitatUITests;
+			sourceTree = "<group>";
+		};
+		CB9BB40B29F02B210075F06F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CB9BB40C29F02B340075F06F /* Habit.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,6 +288,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB9BB40D29F02B340075F06F /* Habit.swift in Sources */,
 				CB9BB3CF29EFFA800075F06F /* ContentView.swift in Sources */,
 				CB9BB3CD29EFFA800075F06F /* HabitatApp.swift in Sources */,
 			);
