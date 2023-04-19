@@ -6,16 +6,31 @@
 //
 
 import SwiftUI
+import Firebase
+
 
 struct ContentView: View {
+    
     var body: some View {
+        let db = Firestore.firestore()
+        
+        
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            Text("Habitat")
+                .font(.largeTitle)
+                .bold()
+            Text("The way to make new habits")
+                .font(.title)
+            
+            Spacer()
+            
+            Text("Sign in to make your new habits")
+           
+            Spacer()
+        }.onAppear() {
+            db.collection("Test").addDocument(data: ["name": "David"])
         }
-        .padding()
+
     }
 }
 

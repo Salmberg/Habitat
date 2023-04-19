@@ -14,6 +14,10 @@
 		CB9BB3DE29EFFA810075F06F /* HabitatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9BB3DD29EFFA810075F06F /* HabitatTests.swift */; };
 		CB9BB3E829EFFA810075F06F /* HabitatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9BB3E729EFFA810075F06F /* HabitatUITests.swift */; };
 		CB9BB3EA29EFFA810075F06F /* HabitatUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9BB3E929EFFA810075F06F /* HabitatUITestsLaunchTests.swift */; };
+		CB9BB3F929EFFF890075F06F /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = CB9BB3F829EFFF890075F06F /* FirebaseAuth */; };
+		CB9BB3FB29EFFF890075F06F /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = CB9BB3FA29EFFF890075F06F /* FirebaseFirestore */; };
+		CB9BB3FD29EFFF890075F06F /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CB9BB3FC29EFFF890075F06F /* FirebaseFirestoreSwift */; };
+		CB9BB40A29F0067D0075F06F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB9BB40929F0067D0075F06F /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +48,8 @@
 		CB9BB3E329EFFA810075F06F /* HabitatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HabitatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB9BB3E729EFFA810075F06F /* HabitatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitatUITests.swift; sourceTree = "<group>"; };
 		CB9BB3E929EFFA810075F06F /* HabitatUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitatUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CB9BB40629F0050A0075F06F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		CB9BB40929F0067D0075F06F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +57,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB9BB3F929EFFF890075F06F /* FirebaseAuth in Frameworks */,
+				CB9BB3FB29EFFF890075F06F /* FirebaseFirestore in Frameworks */,
+				CB9BB3FD29EFFF890075F06F /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +103,8 @@
 		CB9BB3CB29EFFA800075F06F /* Habitat */ = {
 			isa = PBXGroup;
 			children = (
+				CB9BB40929F0067D0075F06F /* GoogleService-Info.plist */,
+				CB9BB40629F0050A0075F06F /* Info.plist */,
 				CB9BB3CC29EFFA800075F06F /* HabitatApp.swift */,
 				CB9BB3CE29EFFA800075F06F /* ContentView.swift */,
 				CB9BB3D029EFFA810075F06F /* Assets.xcassets */,
@@ -143,6 +154,11 @@
 			dependencies = (
 			);
 			name = Habitat;
+			packageProductDependencies = (
+				CB9BB3F829EFFF890075F06F /* FirebaseAuth */,
+				CB9BB3FA29EFFF890075F06F /* FirebaseFirestore */,
+				CB9BB3FC29EFFF890075F06F /* FirebaseFirestoreSwift */,
+			);
 			productName = Habitat;
 			productReference = CB9BB3C929EFFA800075F06F /* Habitat.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +231,9 @@
 				Base,
 			);
 			mainGroup = CB9BB3C029EFFA800075F06F;
+			packageReferences = (
+				CB9BB3F729EFFF890075F06F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = CB9BB3CA29EFFA800075F06F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -233,6 +252,7 @@
 			files = (
 				CB9BB3D429EFFA810075F06F /* Preview Assets.xcassets in Resources */,
 				CB9BB3D129EFFA810075F06F /* Assets.xcassets in Resources */,
+				CB9BB40A29F0067D0075F06F /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,11 +440,12 @@
 				DEVELOPMENT_TEAM = 5A8L7XTFM2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = Habitat/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -449,11 +470,12 @@
 				DEVELOPMENT_TEAM = 5A8L7XTFM2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = Habitat/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -583,6 +605,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CB9BB3F729EFFF890075F06F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CB9BB3F829EFFF890075F06F /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CB9BB3F729EFFF890075F06F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		CB9BB3FA29EFFF890075F06F /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CB9BB3F729EFFF890075F06F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		CB9BB3FC29EFFF890075F06F /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CB9BB3F729EFFF890075F06F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CB9BB3C129EFFA800075F06F /* Project object */;
 }
