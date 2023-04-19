@@ -1,0 +1,588 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CB9BB3CD29EFFA800075F06F /* HabitatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9BB3CC29EFFA800075F06F /* HabitatApp.swift */; };
+		CB9BB3CF29EFFA800075F06F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9BB3CE29EFFA800075F06F /* ContentView.swift */; };
+		CB9BB3D129EFFA810075F06F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB9BB3D029EFFA810075F06F /* Assets.xcassets */; };
+		CB9BB3D429EFFA810075F06F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB9BB3D329EFFA810075F06F /* Preview Assets.xcassets */; };
+		CB9BB3DE29EFFA810075F06F /* HabitatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9BB3DD29EFFA810075F06F /* HabitatTests.swift */; };
+		CB9BB3E829EFFA810075F06F /* HabitatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9BB3E729EFFA810075F06F /* HabitatUITests.swift */; };
+		CB9BB3EA29EFFA810075F06F /* HabitatUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9BB3E929EFFA810075F06F /* HabitatUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CB9BB3DA29EFFA810075F06F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB9BB3C129EFFA800075F06F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CB9BB3C829EFFA800075F06F;
+			remoteInfo = Habitat;
+		};
+		CB9BB3E429EFFA810075F06F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB9BB3C129EFFA800075F06F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CB9BB3C829EFFA800075F06F;
+			remoteInfo = Habitat;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CB9BB3C929EFFA800075F06F /* Habitat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Habitat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB9BB3CC29EFFA800075F06F /* HabitatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitatApp.swift; sourceTree = "<group>"; };
+		CB9BB3CE29EFFA800075F06F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CB9BB3D029EFFA810075F06F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CB9BB3D329EFFA810075F06F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CB9BB3D929EFFA810075F06F /* HabitatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HabitatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB9BB3DD29EFFA810075F06F /* HabitatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitatTests.swift; sourceTree = "<group>"; };
+		CB9BB3E329EFFA810075F06F /* HabitatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HabitatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB9BB3E729EFFA810075F06F /* HabitatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitatUITests.swift; sourceTree = "<group>"; };
+		CB9BB3E929EFFA810075F06F /* HabitatUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitatUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CB9BB3C629EFFA800075F06F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB9BB3D629EFFA810075F06F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB9BB3E029EFFA810075F06F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CB9BB3C029EFFA800075F06F = {
+			isa = PBXGroup;
+			children = (
+				CB9BB3CB29EFFA800075F06F /* Habitat */,
+				CB9BB3DC29EFFA810075F06F /* HabitatTests */,
+				CB9BB3E629EFFA810075F06F /* HabitatUITests */,
+				CB9BB3CA29EFFA800075F06F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CB9BB3CA29EFFA800075F06F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CB9BB3C929EFFA800075F06F /* Habitat.app */,
+				CB9BB3D929EFFA810075F06F /* HabitatTests.xctest */,
+				CB9BB3E329EFFA810075F06F /* HabitatUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CB9BB3CB29EFFA800075F06F /* Habitat */ = {
+			isa = PBXGroup;
+			children = (
+				CB9BB3CC29EFFA800075F06F /* HabitatApp.swift */,
+				CB9BB3CE29EFFA800075F06F /* ContentView.swift */,
+				CB9BB3D029EFFA810075F06F /* Assets.xcassets */,
+				CB9BB3D229EFFA810075F06F /* Preview Content */,
+			);
+			path = Habitat;
+			sourceTree = "<group>";
+		};
+		CB9BB3D229EFFA810075F06F /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				CB9BB3D329EFFA810075F06F /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CB9BB3DC29EFFA810075F06F /* HabitatTests */ = {
+			isa = PBXGroup;
+			children = (
+				CB9BB3DD29EFFA810075F06F /* HabitatTests.swift */,
+			);
+			path = HabitatTests;
+			sourceTree = "<group>";
+		};
+		CB9BB3E629EFFA810075F06F /* HabitatUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CB9BB3E729EFFA810075F06F /* HabitatUITests.swift */,
+				CB9BB3E929EFFA810075F06F /* HabitatUITestsLaunchTests.swift */,
+			);
+			path = HabitatUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CB9BB3C829EFFA800075F06F /* Habitat */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB9BB3ED29EFFA810075F06F /* Build configuration list for PBXNativeTarget "Habitat" */;
+			buildPhases = (
+				CB9BB3C529EFFA800075F06F /* Sources */,
+				CB9BB3C629EFFA800075F06F /* Frameworks */,
+				CB9BB3C729EFFA800075F06F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Habitat;
+			productName = Habitat;
+			productReference = CB9BB3C929EFFA800075F06F /* Habitat.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CB9BB3D829EFFA810075F06F /* HabitatTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB9BB3F029EFFA810075F06F /* Build configuration list for PBXNativeTarget "HabitatTests" */;
+			buildPhases = (
+				CB9BB3D529EFFA810075F06F /* Sources */,
+				CB9BB3D629EFFA810075F06F /* Frameworks */,
+				CB9BB3D729EFFA810075F06F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CB9BB3DB29EFFA810075F06F /* PBXTargetDependency */,
+			);
+			name = HabitatTests;
+			productName = HabitatTests;
+			productReference = CB9BB3D929EFFA810075F06F /* HabitatTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CB9BB3E229EFFA810075F06F /* HabitatUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB9BB3F329EFFA810075F06F /* Build configuration list for PBXNativeTarget "HabitatUITests" */;
+			buildPhases = (
+				CB9BB3DF29EFFA810075F06F /* Sources */,
+				CB9BB3E029EFFA810075F06F /* Frameworks */,
+				CB9BB3E129EFFA810075F06F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CB9BB3E529EFFA810075F06F /* PBXTargetDependency */,
+			);
+			name = HabitatUITests;
+			productName = HabitatUITests;
+			productReference = CB9BB3E329EFFA810075F06F /* HabitatUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CB9BB3C129EFFA800075F06F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					CB9BB3C829EFFA800075F06F = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					CB9BB3D829EFFA810075F06F = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = CB9BB3C829EFFA800075F06F;
+					};
+					CB9BB3E229EFFA810075F06F = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = CB9BB3C829EFFA800075F06F;
+					};
+				};
+			};
+			buildConfigurationList = CB9BB3C429EFFA800075F06F /* Build configuration list for PBXProject "Habitat" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CB9BB3C029EFFA800075F06F;
+			productRefGroup = CB9BB3CA29EFFA800075F06F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CB9BB3C829EFFA800075F06F /* Habitat */,
+				CB9BB3D829EFFA810075F06F /* HabitatTests */,
+				CB9BB3E229EFFA810075F06F /* HabitatUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CB9BB3C729EFFA800075F06F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB9BB3D429EFFA810075F06F /* Preview Assets.xcassets in Resources */,
+				CB9BB3D129EFFA810075F06F /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB9BB3D729EFFA810075F06F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB9BB3E129EFFA810075F06F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CB9BB3C529EFFA800075F06F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB9BB3CF29EFFA800075F06F /* ContentView.swift in Sources */,
+				CB9BB3CD29EFFA800075F06F /* HabitatApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB9BB3D529EFFA810075F06F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB9BB3DE29EFFA810075F06F /* HabitatTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB9BB3DF29EFFA810075F06F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB9BB3EA29EFFA810075F06F /* HabitatUITestsLaunchTests.swift in Sources */,
+				CB9BB3E829EFFA810075F06F /* HabitatUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CB9BB3DB29EFFA810075F06F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CB9BB3C829EFFA800075F06F /* Habitat */;
+			targetProxy = CB9BB3DA29EFFA810075F06F /* PBXContainerItemProxy */;
+		};
+		CB9BB3E529EFFA810075F06F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CB9BB3C829EFFA800075F06F /* Habitat */;
+			targetProxy = CB9BB3E429EFFA810075F06F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		CB9BB3EB29EFFA810075F06F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CB9BB3EC29EFFA810075F06F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CB9BB3EE29EFFA810075F06F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Habitat/Preview Content\"";
+				DEVELOPMENT_TEAM = 5A8L7XTFM2;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.salmberg.Habitat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CB9BB3EF29EFFA810075F06F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Habitat/Preview Content\"";
+				DEVELOPMENT_TEAM = 5A8L7XTFM2;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.salmberg.Habitat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CB9BB3F129EFFA810075F06F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5A8L7XTFM2;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.salmberg.HabitatTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Habitat.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Habitat";
+			};
+			name = Debug;
+		};
+		CB9BB3F229EFFA810075F06F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5A8L7XTFM2;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.salmberg.HabitatTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Habitat.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Habitat";
+			};
+			name = Release;
+		};
+		CB9BB3F429EFFA810075F06F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5A8L7XTFM2;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.salmberg.HabitatUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Habitat;
+			};
+			name = Debug;
+		};
+		CB9BB3F529EFFA810075F06F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5A8L7XTFM2;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.salmberg.HabitatUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Habitat;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CB9BB3C429EFFA800075F06F /* Build configuration list for PBXProject "Habitat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB9BB3EB29EFFA810075F06F /* Debug */,
+				CB9BB3EC29EFFA810075F06F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CB9BB3ED29EFFA810075F06F /* Build configuration list for PBXNativeTarget "Habitat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB9BB3EE29EFFA810075F06F /* Debug */,
+				CB9BB3EF29EFFA810075F06F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CB9BB3F029EFFA810075F06F /* Build configuration list for PBXNativeTarget "HabitatTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB9BB3F129EFFA810075F06F /* Debug */,
+				CB9BB3F229EFFA810075F06F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CB9BB3F329EFFA810075F06F /* Build configuration list for PBXNativeTarget "HabitatUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB9BB3F429EFFA810075F06F /* Debug */,
+				CB9BB3F529EFFA810075F06F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CB9BB3C129EFFA800075F06F /* Project object */;
+}
