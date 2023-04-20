@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB88DB3729F134B80047E3EC /* HabitsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB88DB3629F134B80047E3EC /* HabitsVM.swift */; };
+		CB88DB3929F190290047E3EC /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB88DB3829F190290047E3EC /* AuthViewModel.swift */; };
 		CB9BB3CD29EFFA800075F06F /* HabitatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9BB3CC29EFFA800075F06F /* HabitatApp.swift */; };
 		CB9BB3CF29EFFA800075F06F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9BB3CE29EFFA800075F06F /* ContentView.swift */; };
 		CB9BB3D129EFFA810075F06F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB9BB3D029EFFA810075F06F /* Assets.xcassets */; };
@@ -39,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CB88DB3629F134B80047E3EC /* HabitsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsVM.swift; sourceTree = "<group>"; };
+		CB88DB3829F190290047E3EC /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		CB9BB3C929EFFA800075F06F /* Habitat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Habitat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB9BB3CC29EFFA800075F06F /* HabitatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitatApp.swift; sourceTree = "<group>"; };
 		CB9BB3CE29EFFA800075F06F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -82,6 +86,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CB88DB3329F132C30047E3EC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CB9BB3CE29EFFA800075F06F /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		CB9BB3C029EFFA800075F06F = {
 			isa = PBXGroup;
 			children = (
@@ -105,11 +117,11 @@
 		CB9BB3CB29EFFA800075F06F /* Habitat */ = {
 			isa = PBXGroup;
 			children = (
+				CB88DB3329F132C30047E3EC /* Views */,
 				CB9BB40B29F02B210075F06F /* Model */,
 				CB9BB40929F0067D0075F06F /* GoogleService-Info.plist */,
 				CB9BB40629F0050A0075F06F /* Info.plist */,
 				CB9BB3CC29EFFA800075F06F /* HabitatApp.swift */,
-				CB9BB3CE29EFFA800075F06F /* ContentView.swift */,
 				CB9BB3D029EFFA810075F06F /* Assets.xcassets */,
 				CB9BB3D229EFFA810075F06F /* Preview Content */,
 			);
@@ -145,6 +157,8 @@
 			isa = PBXGroup;
 			children = (
 				CB9BB40C29F02B340075F06F /* Habit.swift */,
+				CB88DB3629F134B80047E3EC /* HabitsVM.swift */,
+				CB88DB3829F190290047E3EC /* AuthViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -288,7 +302,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB88DB3929F190290047E3EC /* AuthViewModel.swift in Sources */,
 				CB9BB40D29F02B340075F06F /* Habit.swift in Sources */,
+				CB88DB3729F134B80047E3EC /* HabitsVM.swift in Sources */,
 				CB9BB3CF29EFFA800075F06F /* ContentView.swift in Sources */,
 				CB9BB3CD29EFFA800075F06F /* HabitatApp.swift in Sources */,
 			);
