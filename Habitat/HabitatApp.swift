@@ -21,10 +21,13 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 
 @main
 struct HabitatApp: App {
+    @StateObject var authState = AuthState()
+
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(authState)
         }
     }
 }

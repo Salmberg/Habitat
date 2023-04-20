@@ -36,25 +36,48 @@ struct SignInView : View {
     var body : some View {
         VStack {
             TextField("Email", text: $email)
-            TextField("Password", text: $password)
-
+                .textContentType(.emailAddress)
+                .keyboardType(.emailAddress)
+                .autocapitalization(.none)
+                .disableAutocorrection(true)
+            
+            SecureField("Password", text: $password)
+            
             Button(action: {
-                authVM.signIn(email: email, password: password)
-                //signedIn = true
+                if !email.isEmpty && !password.isEmpty {
+                    auth.signIn(withEmail: email, password: password) { result, error in
+                        if let error = error {
+                            // Handle sign in error
+                            print("Error signing in: \(error.localizedDescription)")
+                        } else {
+                            // Sign in success
+                            signedIn = true
+                        }
+                    }
+                }
             }) {
                 Text("Sign in")
             }
             Button(action: {
-                authVM.signUp(email: email, password: password)
-                //signedIn = true
+                if !email.isEmpty && !password.isEmpty {
+                    auth.createUser(withEmail: email, password: password) { result, error in
+                        if let error = error {
+                            // Handle sign up error
+                            print("Error signing up: \(error.localizedDescription)")
+                        } else {
+                            // Sign up success
+                            signedIn = true
+                        }
+                    }
+                }
             }) {
                 Text("Sign up")
             }
         }
-        
     }
-    
 }
+
+
 
 struct HabitListView : View {
     @StateObject var habitsVM = HabitsVM()
@@ -64,39 +87,44 @@ struct HabitListView : View {
     
     let db = Firestore.firestore()
     
-
     var body : some View {
-        Button(action: {
-            authVM.signOut()
-        }){
-            Text("Sign out")
-        }
-        
-            VStack {
-                List {
-                    ForEach(habitsVM.habits) { habit in
-                        RowView(habit: habit, vm: habitsVM)
-                    }
+        VStack {
+            Button(action: {
+                authVM.signOut()
+            }) {
+                Text("Sign out")
+            }
+            
+            List {
+                ForEach(habitsVM.habits) { habit in
+                    RowView(habit: habit, vm: habitsVM)
                 }
-                Button(action: {
-                    showAddAlert = true
-                }) {
-                    Text("Add habit")
-                }
-                .alert("Add", isPresented: $showAddAlert) {
+            }
+            
+            Button(action: {
+                showAddAlert = true
+            }) {
+                Text("Add habit")
+            }
+            
+            .alert("Add", isPresented: $showAddAlert) {
+                VStack {
                     TextField("Habit", text: $newHabitName)
                     Button("Add", action: {
                         habitsVM.saveHabit(habitName: newHabitName)
-                        //habitsVM.listenToFirestore()
+                        habitsVM.listenToFirestore()
+                        newHabitName = ""
+                        showAddAlert = false
                     })
                 }
             }
-            .onAppear {
-                habitsVM.listenToFirestore()
-            }
         }
-        
+        .onAppear {
+            habitsVM.listenToFirestore()
+        }
+    }
 }
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
