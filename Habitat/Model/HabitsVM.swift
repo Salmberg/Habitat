@@ -15,6 +15,16 @@ class HabitsVM : ObservableObject {
     
     @Published var habits = [Habit]()
     
+    func delete(index: Int) {
+        guard let user = auth.currentUser else {return}
+        let habitsRef = db.collection("users").document(user.uid).collection("habits")
+        
+        let habit = habits[index]
+        if let id = habit.id {
+            habitsRef.document(id).delete()
+        }
+    }
+    
     func toggle(habit : Habit) {
         
         guard let user = auth.currentUser else {return}
@@ -24,9 +34,6 @@ class HabitsVM : ObservableObject {
             habitsRef.document(id).updateData(["done" : !habit.done])
         }
     }
-    
-    
-
     
     func saveHabit(habitName: String) {
         
