@@ -40,9 +40,9 @@ struct SignInView : View {
                 .scaledToFill()
                 .edgesIgnoringSafeArea(.all)
                 .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-                                .offset(x: -80)
+                .offset(x: -80)
             
-                
+            
             VStack {
                 Text("Habitat")
                     .font(.largeTitle)
@@ -64,7 +64,7 @@ struct SignInView : View {
                     .padding(.horizontal, 60)
                     .padding(.vertical,10)
                     .multilineTextAlignment(.center)
-
+                
                 
                 
                 SecureField("Password", text: $password)
@@ -75,7 +75,7 @@ struct SignInView : View {
                     .padding(.horizontal, 60)
                     .padding(.vertical,5)
                     .multilineTextAlignment(.center)
-
+                
                 
                 
                 Button(action: {
@@ -131,6 +131,9 @@ struct HabitListView : View {
     @State var newHabitName = ""
     @ObservedObject var authVM : AuthViewModel
     
+    @State var progressValue: Float = 0.0
+    
+    
     let db = Firestore.firestore()
     
     var body : some View {
@@ -139,19 +142,40 @@ struct HabitListView : View {
                 authVM.signOut()
             }) {
                 Text("Sign out")
+                
             }
+            
             
             ScrollView {
                 ForEach(habitsVM.habits) { habit in
                     RowView(habit: habit, vm: habitsVM)
                         .listRowBackground(Color(.black))
                         .foregroundColor(.white )
+                    
                 }
                 .onDelete() { IndexSet in
                     for index in IndexSet {
                         habitsVM.delete(index: index)
                     }
                     
+                }
+                ProgressBar(progress: self.$progressValue)
+                    .frame(width: 150.0, height: 150.0)
+                    .padding(40.0)
+                
+                Button(action: {
+                    self.incrementProgress()
+                }) {
+                    HStack {
+                        Text("Uför")
+                            .foregroundColor(.white)
+                    }
+                    .padding(15.0)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 15.0)
+                            .stroke(lineWidth: 2.0)
+                            .foregroundColor(.white)
+                    )
                 }
             }
             
@@ -177,9 +201,37 @@ struct HabitListView : View {
             habitsVM.listenToFirestore()
         }
         .background(Color(.black)
-        .scaledToFill()
-        .edgesIgnoringSafeArea(.all))
+            .scaledToFill()
+            .edgesIgnoringSafeArea(.all))
     }
+    func incrementProgress() {
+        let randomValue = Float([0.012, 0.022, 0.034, 0.016, 0.11].randomElement()!)
+        self.progressValue += randomValue
+    }
+    struct ProgressBar: View {
+        @Binding var progress: Float
+        
+        var body: some View {
+            ZStack {
+                Circle()
+                    .stroke(lineWidth: 20.0)
+                    .opacity(0.3)
+                    .foregroundColor(Color.red)
+                
+                Circle()
+                    .trim(from: 0.0, to: CGFloat(min(self.progress, 1.0)))
+                    .stroke(style: StrokeStyle(lineWidth: 20.0, lineCap: .round, lineJoin: .round))
+                    .foregroundColor(Color.red)
+                    .rotationEffect(Angle(degrees: 270.0))
+                    .animation(.linear)
+                
+                Text(String(format: "%.0f %%", min(self.progress, 1.0)*100.0))
+                    .font(.largeTitle)
+                    .bold()
+            }
+        }
+    }
+    
 }
 
 

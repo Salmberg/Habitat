@@ -14,4 +14,7 @@ struct Habit : Codable, Identifiable {
     var name : String
     var days : Int
     var done : Bool = false
+    
+   
+
 }
