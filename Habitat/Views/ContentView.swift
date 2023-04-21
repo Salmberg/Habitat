@@ -131,7 +131,6 @@ struct HabitListView : View {
     @State var newHabitName = ""
     @ObservedObject var authVM : AuthViewModel
     
-    @State var progressValue: Float = 0.0
     
     
     let db = Firestore.firestore()
@@ -159,24 +158,9 @@ struct HabitListView : View {
                     }
                     
                 }
-                ProgressBar(progress: self.$progressValue)
-                    .frame(width: 150.0, height: 150.0)
-                    .padding(40.0)
                 
-                Button(action: {
-                    self.incrementProgress()
-                }) {
-                    HStack {
-                        Text("Uför")
-                            .foregroundColor(.white)
-                    }
-                    .padding(15.0)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 15.0)
-                            .stroke(lineWidth: 2.0)
-                            .foregroundColor(.white)
-                    )
-                }
+                
+               
             }
             
             Button(action: {
@@ -204,11 +188,9 @@ struct HabitListView : View {
             .scaledToFill()
             .edgesIgnoringSafeArea(.all))
     }
-    func incrementProgress() {
-        let randomValue = Float([0.012, 0.022, 0.034, 0.016, 0.11].randomElement()!)
-        self.progressValue += randomValue
-    }
+    
     struct ProgressBar: View {
+        let habit : Habit
         @Binding var progress: Float
         
         var body: some View {
@@ -224,15 +206,65 @@ struct HabitListView : View {
                     .foregroundColor(Color.red)
                     .rotationEffect(Angle(degrees: 270.0))
                     .animation(.linear)
-                
+                Text(habit.name)
+                    .padding(.bottom, 50)
+                    .bold()
+            
                 Text(String(format: "%.0f %%", min(self.progress, 1.0)*100.0))
                     .font(.largeTitle)
                     .bold()
+                Text("Dagar:\(habit.days.formatted())")
+                    .padding(.top, 50)
             }
         }
     }
+    struct RowView: View {
+        @State var progressValue: Float = 0.0
+
+        var habit : Habit
+        let vm : HabitsVM
+        
+        var body: some View {
+            HStack{
+                ProgressBar(habit: habit, progress: self.$progressValue)
+                    .frame(width: 150.0, height: 150.0)
+                    .padding(20.0)
+                    .padding(.leading, 120)
+                Spacer()
+                Button(action: {
+                    vm.toggle(habit: habit)
+                }) {
+                    //Checkmark?
+                }
+            }
+            Button(action: {
+                self.incrementProgress()
+            }) {
+                HStack {
+                    Text("Utför")
+                        .foregroundColor(.white)
+                }
+                .padding(15.0)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 15.0)
+                        .stroke(lineWidth: 2.0)
+                        .foregroundColor(.white)
+                )
+            }
+        }
+        func incrementProgress() {
+            let randomValue = Float([0.012, 0.022, 0.034, 0.016, 0.11].randomElement()!)
+            self.progressValue += randomValue
+            
+            
+        }
+    
+       
+        
+    }
     
 }
+
 
 
 struct ContentView_Previews: PreviewProvider {
@@ -243,19 +275,4 @@ struct ContentView_Previews: PreviewProvider {
 
 
 
-struct RowView: View {
-    let habit : Habit
-    let vm : HabitsVM
-    
-    var body: some View {
-        HStack{
-            Text(habit.name)
-            Spacer()
-            Button(action: {
-                vm.toggle(habit: habit)
-            }) {
-                //Checkmark?
-            }
-        }
-    }
-}
+
