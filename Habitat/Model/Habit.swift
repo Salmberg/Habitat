@@ -15,6 +15,7 @@ struct Habit : Codable, Identifiable {
     var days : Int = 0
     var done : Bool = false
     var isCompleted : Bool = false
+   // var lastPressDate: Date?
    // var procent : Float
     
 
