@@ -12,19 +12,12 @@ import FirebaseFirestoreSwift
 struct Habit : Codable, Identifiable {
     @DocumentID var id : String?
     var name : String
-    var days : Int
+    var days : Int = 0
     var done : Bool = false
+    var isCompleted : Bool = false
+   // var procent : Float
+    
 
 }
 
-class DaysTracker: ObservableObject {
-    @Published var habit: Habit
 
-    init(habit: Habit) {
-        self.habit = habit
-    }
-
-    func incrementDays() {
-        self.habit.days += 1
-    }
-}

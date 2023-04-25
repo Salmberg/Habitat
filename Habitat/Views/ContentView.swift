@@ -14,6 +14,8 @@ import Firebase
 struct ContentView : View {
     @StateObject var authVM = AuthViewModel()
     
+
+    
     @State var signedIn = false
     
     var body: some View {
@@ -23,7 +25,6 @@ struct ContentView : View {
             HabitListView(authVM: authVM)
         }
     }
-    
 }
 
 struct SignInView : View {
@@ -32,6 +33,7 @@ struct SignInView : View {
     @State var email : String = ""
     @State var password : String = ""
     @ObservedObject var authVM : AuthViewModel
+
     
     var body : some View {
         ZStack {
@@ -130,7 +132,8 @@ struct HabitListView : View {
     @State var showAddAlert = false
     @State var newHabitName = ""
     @ObservedObject var authVM : AuthViewModel
-    
+
+    @State var days = 1
     
     
     let db = Firestore.firestore()
@@ -144,23 +147,18 @@ struct HabitListView : View {
                 
             }
             
-            
             ScrollView {
                 ForEach(habitsVM.habits) { habit in
-                    RowView(habit: habit, vm: habitsVM)
+                    RowView(habit: habit, vm: HabitsVM())
                         .listRowBackground(Color(.black))
                         .foregroundColor(.white )
                     
                 }
-                .onDelete() { IndexSet in
-                    for index in IndexSet {
-                        habitsVM.delete(index: index)
-                    }
-                    
-                }
-                
-                
-               
+               .onDelete() { IndexSet in
+                   for index in IndexSet {
+                       habitsVM.delete(index: index)
+                   }
+        }
             }
             
             Button(action: {
@@ -192,6 +190,7 @@ struct HabitListView : View {
     struct ProgressBar: View {
         let habit : Habit
         @Binding var progress: Float
+
         
         var body: some View {
             ZStack {
@@ -213,7 +212,7 @@ struct HabitListView : View {
                 Text(String(format: "%.0f %%", min(self.progress, 1.0)*100.0))
                     .font(.largeTitle)
                     .bold()
-                Text("Dagar:\(habit.days.formatted())")
+                Text("Dagar:\(habit.days)")
                     .padding(.top, 50)
             }
         }
@@ -221,7 +220,8 @@ struct HabitListView : View {
     struct RowView: View {
         @State var progressValue: Float = 0.0
 
-        var habit : Habit
+        @State var habit : Habit
+        @State var days = 1
         let vm : HabitsVM
         
         var body: some View {
@@ -232,13 +232,14 @@ struct HabitListView : View {
                     .padding(.leading, 120)
                 Spacer()
                 Button(action: {
-                    vm.toggle(habit: habit)
+                    vm.toggle(habit: &habit)
                 }) {
                     //Checkmark?
                 }
             }
             Button(action: {
                 self.incrementProgress()
+                vm.toggle(habit: &habit)
             }) {
                 HStack {
                     Text("Utför")
@@ -255,19 +256,14 @@ struct HabitListView : View {
         func incrementProgress() {
             let randomValue = Float([0.012, 0.022, 0.034, 0.016, 0.11].randomElement()!)
             self.progressValue += randomValue
-            
-            
         }
-    
-       
+        
         
     }
-    
 }
 
-
-
 struct ContentView_Previews: PreviewProvider {
+
     static var previews: some View {
         ContentView()
     }

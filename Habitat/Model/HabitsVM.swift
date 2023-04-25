@@ -25,15 +25,31 @@ class HabitsVM : ObservableObject {
         }
     }
     
-    func toggle(habit : Habit) {
-        
-        guard let user = auth.currentUser else {return}
+    func toggle(habit: inout Habit) {
+        /*
+         passing the habit parameter as an "inout" parameter
+         to the toggle function, which means that any changes
+         made to the habit variable within the function will
+         be reflected outside of the function.
+        */
+        guard let user = auth.currentUser else { return }
         let habitsRef = db.collection("users").document(user.uid).collection("habits")
         
         if let id = habit.id {
-            habitsRef.document(id).updateData(["done" : !habit.done])
+            habitsRef.document(id).updateData(["done": !habit.done])
+            
+            habit.days += 1
+            habitsRef.document(id).updateData(["days": habit.days]) { error in
+                if let error = error {
+                    print("Error updating document: \(error.localizedDescription)")
+                } else {
+                    print("Document successfully updated.")
+                }
+            }
         }
     }
+    
+    
     
     func saveHabit(habitName: String) {
         
@@ -75,6 +91,4 @@ class HabitsVM : ObservableObject {
             }
         }
     }
-
-    
 }
