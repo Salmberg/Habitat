@@ -130,11 +130,11 @@ struct SignInView : View {
 struct HabitListView : View {
     @StateObject var habitsVM = HabitsVM()
     @State var showAddAlert = false
+    @State var showDoneAlert = false
     @State var newHabitName = ""
     @ObservedObject var authVM : AuthViewModel
 
     @State var days = 1
-    
     
     let db = Firestore.firestore()
     
@@ -159,6 +159,9 @@ struct HabitListView : View {
                        habitsVM.delete(index: index)
                    }
         }
+            }
+            .alert(isPresented: $showDoneAlert) {
+                Alert(title: Text("Target Reached!"), message: Text("You have reached your target days."), dismissButton: .default(Text("OK")))
             }
             
             Button(action: {
@@ -191,8 +194,14 @@ struct HabitListView : View {
         let habit : Habit
         @Binding var progress: Float
 
+        func updateProgress() {
+                let habitProgress = Float(habit.days) == 0 ? 0.0 : Float(habit.procent) / Float(habit.days)
+                self.progress = habitProgress
+            }
         
         var body: some View {
+            
+            
             ZStack {
                 Circle()
                     .stroke(lineWidth: 20.0)
@@ -215,31 +224,35 @@ struct HabitListView : View {
                 Text("Dagar:\(habit.days)")
                     .padding(.top, 50)
             }
+            .onAppear{
+                updateProgress()
+            }
         }
     }
     struct RowView: View {
         @State var progressValue: Float = 0.0
-
-        @State var habit : Habit
-        @State var days = 1
-        let vm : HabitsVM
+        @State var showAlert = false
+        @State var habit: Habit
+        let vm: HabitsVM
         
         var body: some View {
-            HStack{
+            HStack {
                 ProgressBar(habit: habit, progress: self.$progressValue)
                     .frame(width: 150.0, height: 150.0)
                     .padding(20.0)
                     .padding(.leading, 120)
                 Spacer()
                 Button(action: {
-                    vm.toggle(habit: &habit)
+                    vm.toggle(habit: &habit, showDoneAlert: showAlert)
                 }) {
-                    //Checkmark?
+                    // Checkmark?
                 }
             }
             Button(action: {
                 self.incrementProgress()
-                vm.toggle(habit: &habit)
+                vm.toggle(habit: &habit, showDoneAlert: showAlert)
+                if habit.days >= habit.targetDays {
+                }
             }) {
                 HStack {
                     Text("Utför")
@@ -252,14 +265,19 @@ struct HabitListView : View {
                         .foregroundColor(.white)
                 )
             }
+            .alert(isPresented: $showAlert) {
+                Alert(title: Text("Congratulations!"), message: Text("You have completed your habit for 60 days."), dismissButton: .default(Text("OK")))
+            }
         }
+        
         func incrementProgress() {
             let randomValue = Float([0.012, 0.022, 0.034, 0.016, 0.11].randomElement()!)
             self.progressValue += randomValue
+            self.habit.days += 1
         }
-        
-        
     }
+
+
 }
 
 struct ContentView_Previews: PreviewProvider {

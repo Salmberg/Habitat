@@ -9,15 +9,17 @@ import Foundation
 import FirebaseFirestoreSwift
 
 
-struct Habit : Codable, Identifiable {
+struct Habit : Codable, Identifiable, Equatable {
     @DocumentID var id : String?
     var name : String
     var days : Int = 0
-    var done : Bool = false
+   // var done : Bool = false
     var isCompleted : Bool = false
-   // var lastPressDate: Date?
-   // var procent : Float
-    
+    var targetDays: Int = 60
+    var procent : Float {
+            return min(Float(self.days) / 21.0, 1.0)
+        }
+   // var lastPressDate : Date?
 
 }
 

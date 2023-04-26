@@ -7,6 +7,7 @@
 
 import Foundation
 import Firebase
+import SwiftUI
 
 class HabitsVM : ObservableObject {
     let db = Firestore.firestore()
@@ -21,21 +22,46 @@ class HabitsVM : ObservableObject {
         
         let habit = habits[index]
         if let id = habit.id {
-            habitsRef.document(id).delete()
+            habitsRef.document(id).delete { error in
+                if let error = error {
+                    print("Error deleting habit: \(error.localizedDescription)")
+                } else {
+                    self.habits.remove(at: index) // Remove habit from array
+                }
+            }
         }
     }
-    func toggle(habit: inout Habit) {
+    func toggle(habit: inout Habit, showDoneAlert: Bool) {
+        
+        @State var showDoneAlert = false
+        /*
+         The inout keyword is used to pass a parameter as a reference.
+         This means that the parameter can be modified within the function
+         and the changes will be reflected outside of the function.
+
+         In your case, you are passing the habit parameter as an
+         inout parameter to the toggle function, which means that
+         any changes made to the habit variable within the function
+         will be reflected outside of the function.
+         */
+       //---------------------------------------------------------------//
+        
+        
         // Check if the habit was already pressed today
 //        if let lastPressDate = habit.lastPressDate,
-//           Calendar.current.isDate(Date(), inSameDayAs: lastPressDate) {
-//            print("Button already pressed today.")
+//         Calendar.current.isDate(Date(), inSameDayAs: lastPressDate) {
+//           print("Button already pressed today.")
 //            return
-//        }
+//     }
         
         // Update the habit
-        habit.done = !habit.done
-        habit.days += 1
-        //habit.lastPressDate = Date()
+        //habit.done = !habit.done
+        if habit.days == 60 {
+            showDoneAlert = true
+        } else if habit.days <= habit.targetDays {
+            habit.days += 1
+        }
+        // habit.lastPressDate = Date()
         
         // Save the habit to the database
         guard let user = auth.currentUser else { return }
@@ -55,10 +81,6 @@ class HabitsVM : ObservableObject {
         }
     }
 
-
-    
-    
-    
     func saveHabit(habitName: String) {
         
         guard let user = auth.currentUser else {return}
