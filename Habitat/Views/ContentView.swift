@@ -14,8 +14,6 @@ import Firebase
 struct ContentView : View {
     @StateObject var authVM = AuthViewModel()
     
-
-    
     @State var signedIn = false
     
     var body: some View {
@@ -232,6 +230,7 @@ struct HabitListView : View {
     struct RowView: View {
         @State var progressValue: Float = 0.0
         @State var showAlert = false
+        @State var showDoneAlert = false
         @State var habit: Habit
         let vm: HabitsVM
         
@@ -251,7 +250,10 @@ struct HabitListView : View {
             Button(action: {
                 self.incrementProgress()
                 vm.toggle(habit: &habit, showDoneAlert: showAlert)
-                if habit.days >= habit.targetDays {
+                if habit.days == habit.targetDays {
+                    showDoneAlert = true
+                } else if habit.days <= habit.targetDays {
+                    habit.days += 1
                 }
             }) {
                 HStack {
@@ -265,7 +267,7 @@ struct HabitListView : View {
                         .foregroundColor(.white)
                 )
             }
-            .alert(isPresented: $showAlert) {
+            .alert(isPresented: $showDoneAlert) {
                 Alert(title: Text("Congratulations!"), message: Text("You have completed your habit for 60 days."), dismissButton: .default(Text("OK")))
             }
         }
@@ -273,7 +275,6 @@ struct HabitListView : View {
         func incrementProgress() {
             let randomValue = Float([0.012, 0.022, 0.034, 0.016, 0.11].randomElement()!)
             self.progressValue += randomValue
-            self.habit.days += 1
         }
     }
 

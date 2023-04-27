@@ -56,7 +56,7 @@ class HabitsVM : ObservableObject {
         
         // Update the habit
         //habit.done = !habit.done
-        if habit.days == 60 {
+        if habit.days == habit.targetDays {
             showDoneAlert = true
         } else if habit.days <= habit.targetDays {
             habit.days += 1
