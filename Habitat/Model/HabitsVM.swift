@@ -17,20 +17,39 @@ class HabitsVM : ObservableObject {
     @Published var habits = [Habit]()
     
     func delete(index: Int) {
-        guard let user = auth.currentUser else {return}
+        guard let user = auth.currentUser else { return }
         let habitsRef = db.collection("users").document(user.uid).collection("habits")
         
         let habit = habits[index]
         if let id = habit.id {
-            habitsRef.document(id).delete { error in
-                if let error = error {
-                    print("Error deleting habit: \(error.localizedDescription)")
-                } else {
-                    self.habits.remove(at: index) // Remove habit from array
+            let alert = UIAlertController(title: "Delete Habit", message: "Are you sure you want to delete this habit?", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { _ in
+                habitsRef.document(id).delete { error in
+                    if let error = error {
+                        print("Error deleting habit: \(error.localizedDescription)")
+                    } else {
+                        if self.habits.indices.contains(index) {
+                            self.habits.remove(at: index) // Remove habit from array
+                            DispatchQueue.main.async {
+                                self.reloadView() // Trigger reload of view on main thread
+                            }
+                        }
+                    }
                 }
-            }
+            }))
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+            
+            UIApplication.shared.windows.first?.rootViewController?.present(alert, animated: true)
         }
     }
+
+    func reloadView() {
+        // Update the view here
+        listenToFirestore()
+    }
+
+
+
     func toggle(habit: inout Habit, showDoneAlert: Binding<Bool>) {
         
         @State var showDoneAlert = false

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB33C4DD29FAC95E00D4D4C3 /* HabitListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB33C4DC29FAC95E00D4D4C3 /* HabitListView.swift */; };
+		CB33C4DF29FAC97400D4D4C3 /* RowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB33C4DE29FAC97400D4D4C3 /* RowView.swift */; };
+		CB33C4E129FACA1300D4D4C3 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB33C4E029FACA1300D4D4C3 /* SignInView.swift */; };
+		CB33C4E329FACAE200D4D4C3 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB33C4E229FACAE200D4D4C3 /* ProgressBarView.swift */; };
 		CB88DB3729F134B80047E3EC /* HabitsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB88DB3629F134B80047E3EC /* HabitsVM.swift */; };
 		CB88DB3929F190290047E3EC /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB88DB3829F190290047E3EC /* AuthViewModel.swift */; };
 		CB9BB3CD29EFFA800075F06F /* HabitatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9BB3CC29EFFA800075F06F /* HabitatApp.swift */; };
@@ -41,6 +45,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CB33C4DC29FAC95E00D4D4C3 /* HabitListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitListView.swift; sourceTree = "<group>"; };
+		CB33C4DE29FAC97400D4D4C3 /* RowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowView.swift; sourceTree = "<group>"; };
+		CB33C4E029FACA1300D4D4C3 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		CB33C4E229FACAE200D4D4C3 /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		CB88DB3629F134B80047E3EC /* HabitsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsVM.swift; sourceTree = "<group>"; };
 		CB88DB3829F190290047E3EC /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		CB9BB3C929EFFA800075F06F /* Habitat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Habitat.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,6 +98,10 @@
 			isa = PBXGroup;
 			children = (
 				CB9BB3CE29EFFA800075F06F /* ContentView.swift */,
+				CB33C4DC29FAC95E00D4D4C3 /* HabitListView.swift */,
+				CB33C4DE29FAC97400D4D4C3 /* RowView.swift */,
+				CB33C4E029FACA1300D4D4C3 /* SignInView.swift */,
+				CB33C4E229FACAE200D4D4C3 /* ProgressBarView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -303,9 +315,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB88DB3929F190290047E3EC /* AuthViewModel.swift in Sources */,
+				CB33C4E329FACAE200D4D4C3 /* ProgressBarView.swift in Sources */,
 				CB9BB40D29F02B340075F06F /* Habit.swift in Sources */,
+				CB33C4DF29FAC97400D4D4C3 /* RowView.swift in Sources */,
 				CB88DB3729F134B80047E3EC /* HabitsVM.swift in Sources */,
+				CB33C4DD29FAC95E00D4D4C3 /* HabitListView.swift in Sources */,
 				CB9BB3CF29EFFA800075F06F /* ContentView.swift in Sources */,
+				CB33C4E129FACA1300D4D4C3 /* SignInView.swift in Sources */,
 				CB9BB3CD29EFFA800075F06F /* HabitatApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
