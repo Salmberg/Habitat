@@ -13,7 +13,6 @@ struct Habit : Codable, Identifiable, Equatable {
     @DocumentID var id : String?
     var name : String
     var days : Int = 0
-   // var done : Bool = false
     var isCompleted : Bool = false
     var targetDays: Int = 60
     var procent : Float {

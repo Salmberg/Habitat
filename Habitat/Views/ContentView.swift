@@ -158,10 +158,7 @@ struct HabitListView : View {
                    }
         }
             }
-            .alert(isPresented: $showDoneAlert) {
-                Alert(title: Text("Target Reached!"), message: Text("You have reached your target days."), dismissButton: .default(Text("OK")))
-            }
-            
+
             Button(action: {
                 showAddAlert = true
             }) {
@@ -229,7 +226,6 @@ struct HabitListView : View {
     }
     struct RowView: View {
         @State var progressValue: Float = 0.0
-        @State var showAlert = false
         @State var showDoneAlert = false
         @State var habit: Habit
         let vm: HabitsVM
@@ -239,33 +235,36 @@ struct HabitListView : View {
                 ProgressBar(habit: habit, progress: self.$progressValue)
                     .frame(width: 150.0, height: 150.0)
                     .padding(20.0)
-                    .padding(.leading, 120)
+                    .padding(.leading, 105)
                 Spacer()
                 Button(action: {
-                    vm.toggle(habit: &habit, showDoneAlert: showAlert)
+                    vm.toggle(habit: &habit, showDoneAlert: $showDoneAlert)
                 }) {
                     // Checkmark?
                 }
             }
             Button(action: {
+                vm.toggle(habit: &habit, showDoneAlert: $showDoneAlert)
                 self.incrementProgress()
-                vm.toggle(habit: &habit, showDoneAlert: showAlert)
                 if habit.days == habit.targetDays {
+                    print("Congratulations! You have completed your habit for 60 days.")
                     showDoneAlert = true
                 } else if habit.days <= habit.targetDays {
+                    print("Adding days")
                     habit.days += 1
                 }
             }) {
-                HStack {
                     Text("Utför")
                         .foregroundColor(.white)
-                }
+                
+                
                 .padding(15.0)
                 .overlay(
                     RoundedRectangle(cornerRadius: 15.0)
                         .stroke(lineWidth: 2.0)
                         .foregroundColor(.white)
                 )
+                
             }
             .alert(isPresented: $showDoneAlert) {
                 Alert(title: Text("Congratulations!"), message: Text("You have completed your habit for 60 days."), dismissButton: .default(Text("OK")))

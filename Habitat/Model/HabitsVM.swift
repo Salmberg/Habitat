@@ -31,7 +31,7 @@ class HabitsVM : ObservableObject {
             }
         }
     }
-    func toggle(habit: inout Habit, showDoneAlert: Bool) {
+    func toggle(habit: inout Habit, showDoneAlert: Binding<Bool>) {
         
         @State var showDoneAlert = false
         /*
@@ -55,7 +55,6 @@ class HabitsVM : ObservableObject {
 //     }
         
         // Update the habit
-        //habit.done = !habit.done
         if habit.days == habit.targetDays {
             showDoneAlert = true
         } else if habit.days <= habit.targetDays {
