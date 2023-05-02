@@ -98,7 +98,16 @@ class HabitsVM : ObservableObject {
             }
         }
     }
-
+    
+    func signOut() {
+           do {
+               try auth.signOut()
+               print("User successfully signed out from Firebase Firestore")
+           } catch let signOutError as NSError {
+               print("Error signing out: \(signOutError.localizedDescription)")
+           }
+       }
+    
     func saveHabit(habitName: String) {
         
         guard let user = auth.currentUser else {return}

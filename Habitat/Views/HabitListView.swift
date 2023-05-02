@@ -27,7 +27,7 @@ struct HabitListView : View {
     var body : some View {
         VStack {
             Button(action: {
-                authVM.signOut()
+                habitsVM.signOut()
             }) {
                 Text("Sign out")
                 

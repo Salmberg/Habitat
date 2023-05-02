@@ -23,7 +23,7 @@ struct RowView: View {
             ProgressBar(habit: habit, progress: self.$progressValue)
                 .frame(width: 150.0, height: 150.0)
                 .padding(20.0)
-                .padding(.leading, 105)
+                .padding(.leading, 120)
             Spacer()
             Button(action: {
                 vm.toggle(habit: &habit, showDoneAlert: $showDoneAlert)
@@ -39,7 +39,8 @@ struct RowView: View {
             .padding()
         }
         Button(action: {
-            vm.toggle(habit: &habit, showDoneAlert: $showDoneAlert)
+            //Behöver inte denna?
+            //vm.toggle(habit: &habit, showDoneAlert: $showDoneAlert)
             self.incrementProgress()
             if habit.days == habit.targetDays {
                 print("Congratulations! You have completed your habit for 60 days.")
@@ -62,10 +63,9 @@ struct RowView: View {
             
         }
         .alert(isPresented: $showDoneAlert) {
-            Alert(title: Text("Congratulations!"), message: Text("You have completed your habit for 60 days."), primaryButton: .default(Text("OK")), secondaryButton: .destructive(Text("Add a new Habit")) {
-                
-            })
+           Alert(title: Text("Congratulations!"), message: Text("You have completed your habit for 60 days."), dismissButton: .default(Text("OK")))
         }
+
     }
     
     func incrementProgress() {
