@@ -31,9 +31,12 @@ struct HabitListView : View {
                 authVM.signOut() // Call the signOut function from the AuthViewModel
                 signedIn = false // Set the signedIn variable to false
             }) {
-                Text("Sign out")
-                
+                Image(systemName: "arrow.left.to.line")
+                    .font(.system(size: 30))
+                    .foregroundColor(.white)
             }
+            .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                .padding(.leading, 20) 
             .foregroundColor(.white)
             
             
@@ -52,7 +55,9 @@ struct HabitListView : View {
             Button(action: {
                 showAddAlert = true
             }) {
-                Text("Add habit")
+                Image(systemName: "plus.app")
+                        .font(.system(size: 50))
+                        .foregroundColor(.white)
             }
             .foregroundColor(.white)
             .font(.title)
