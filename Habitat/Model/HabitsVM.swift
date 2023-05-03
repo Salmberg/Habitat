@@ -78,6 +78,7 @@ class HabitsVM : ObservableObject {
             showDoneAlert = true
         } else if habit.days <= habit.targetDays {
             habit.days += 1
+            habit.progressValue += 1
         }
         // habit.lastPressDate = Date()
         

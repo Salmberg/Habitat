@@ -14,10 +14,13 @@ struct Habit : Codable, Identifiable, Equatable {
     var name : String
     var days : Int = 0
     var isCompleted : Bool = false
-    var targetDays: Int = 60
-    var procent : Float {
-            return min(Float(self.days) / 21.0, 1.0)
-        }
+    var targetDays: Int = 5
+    var progressValue: Float = 0.0
+    
+//    var procent : Float {
+//            return min(Float(self.days) / 21.0, 1.0)
+//        }
+    
    // var lastPressDate : Date?
 
 }

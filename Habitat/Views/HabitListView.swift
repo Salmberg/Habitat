@@ -32,6 +32,8 @@ struct HabitListView : View {
                 Text("Sign out")
                 
             }
+            .foregroundColor(.white)
+            
             
             ScrollView {
                 ForEach(habitsVM.habits) { habit in
@@ -50,6 +52,8 @@ struct HabitListView : View {
             }) {
                 Text("Add habit")
             }
+            .foregroundColor(.white)
+            .font(.title)
             
             .alert("Add new habit", isPresented: $showAddAlert) {
                 VStack {
@@ -60,7 +64,11 @@ struct HabitListView : View {
                         newHabitName = ""
                         showAddAlert = false
                     })
+                    Button("Cancel", action: {
+                        showAddAlert = false
+                    })
                 }
+                
             }
         }
         .onAppear {

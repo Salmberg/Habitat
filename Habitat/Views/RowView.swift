@@ -23,7 +23,7 @@ struct RowView: View {
             ProgressBar(habit: habit, progress: self.$progressValue)
                 .frame(width: 150.0, height: 150.0)
                 .padding(20.0)
-                .padding(.leading, 120)
+                .padding(.leading, 105)
             Spacer()
             Button(action: {
                 vm.toggle(habit: &habit, showDoneAlert: $showDoneAlert)
@@ -39,28 +39,32 @@ struct RowView: View {
             .padding()
         }
         Button(action: {
-            //Behöver inte denna?
-            //vm.toggle(habit: &habit, showDoneAlert: $showDoneAlert)
-            self.incrementProgress()
-            if habit.days == habit.targetDays {
-                print("Congratulations! You have completed your habit for 60 days.")
-                showDoneAlert = true
-            } else if habit.days <= habit.targetDays {
-                print("Adding days")
-                habit.days += 1
-            }
+            let alert = UIAlertController(title: "Have you done this habit today?", message: nil, preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { _ in
+                self.incrementProgress()
+                if habit.days == habit.targetDays {
+                    print("Congratulations! You have completed your habit for 60 days.")
+                    showDoneAlert = true
+                } else if habit.days <= habit.targetDays {
+                    print("Adding days")
+                    vm.toggle(habit: &habit, showDoneAlert: $showDoneAlert)
+                    
+                }
+            }))
+            
+            alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+            
+            UIApplication.shared.windows.first?.rootViewController?.present(alert, animated: true, completion: nil)
         }) {
-                Text("Utför")
-                    .foregroundColor(.white)
-            
-            
-            .padding(15.0)
-            .overlay(
-                RoundedRectangle(cornerRadius: 15.0)
-                    .stroke(lineWidth: 2.0)
-                    .foregroundColor(.white)
-            )
-            
+            Text("Utför")
+                .foregroundColor(.white)
+                .padding(15.0)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 15.0)
+                        .stroke(lineWidth: 2.0)
+                        .foregroundColor(.white)
+                )
         }
         .alert(isPresented: $showDoneAlert) {
            Alert(title: Text("Congratulations!"), message: Text("You have completed your habit for 60 days."), dismissButton: .default(Text("OK")))
@@ -73,5 +77,4 @@ struct RowView: View {
         self.progressValue += randomValue
     }
     
-  
 }
