@@ -18,6 +18,7 @@ struct RowView: View {
     @State var habit: Habit
     let vm: HabitsVM
     
+    
     var body: some View {
         HStack {
             ProgressBar(habit: habit, progress: self.$progressValue)
@@ -25,11 +26,7 @@ struct RowView: View {
                 .padding(20.0)
                 .padding(.leading, 105)
             Spacer()
-            Button(action: {
-                vm.toggle(habit: &habit, showDoneAlert: $showDoneAlert)
-            }) {
-                // Checkmark?
-            }
+           
             Button(action: {
                 guard let index = vm.habits.firstIndex(where: { $0.id == habit.id }) else { return }
                 vm.delete(index: index)
@@ -49,6 +46,8 @@ struct RowView: View {
                 } else if habit.days <= habit.targetDays {
                     print("Adding days")
                     vm.toggle(habit: &habit, showDoneAlert: $showDoneAlert)
+                    let progressBar = ProgressBar(habit: habit, progress: $progressValue)
+                                   progressBar.updateProgress()
                     
                 }
             }))

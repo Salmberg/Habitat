@@ -52,6 +52,7 @@ class HabitsVM : ObservableObject {
 
     func toggle(habit: inout Habit, showDoneAlert: Binding<Bool>) {
         
+        
         @State var showDoneAlert = false
         /*
          The inout keyword is used to pass a parameter as a reference.

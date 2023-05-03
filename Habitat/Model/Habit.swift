@@ -14,7 +14,7 @@ struct Habit : Codable, Identifiable, Equatable {
     var name : String
     var days : Int = 0
     var isCompleted : Bool = false
-    var targetDays: Int = 5
+    var targetDays: Int = 4
     var progressValue: Float = 0.0
     
 //    var procent : Float {
