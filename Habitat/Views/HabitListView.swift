@@ -18,6 +18,7 @@ struct HabitListView : View {
     @State var newHabitName = ""
     @ObservedObject var authVM : AuthViewModel
     let auth = Auth.auth()
+    @Binding var signedIn: Bool
     
     
     @State var days = 1
@@ -27,7 +28,8 @@ struct HabitListView : View {
     var body : some View {
         VStack {
             Button(action: {
-                habitsVM.signOut()
+                authVM.signOut() // Call the signOut function from the AuthViewModel
+                signedIn = false // Set the signedIn variable to false
             }) {
                 Text("Sign out")
                 

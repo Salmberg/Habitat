@@ -16,7 +16,7 @@ struct ProgressBar: View {
     @Binding var progress: Float
 
     func updateProgress() {
-            let habitProgress = Float(habit.days) == 0 ? 0.0 : Float(habit.progressValue) / 4
+            let habitProgress = Float(habit.days) == 0 ? 0.0 : Float(habit.progressValue) / 60
             self.progress = habitProgress
             
         }
