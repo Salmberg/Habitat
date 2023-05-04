@@ -16,6 +16,7 @@ struct HabitListView : View {
     @State var showAddAlert = false
     @State var showDoneAlert = false
     @State var newHabitName = ""
+    @State var showInfoAlert = false
     @ObservedObject var authVM : AuthViewModel
     let auth = Auth.auth()
     @Binding var signedIn: Bool
@@ -33,7 +34,7 @@ struct HabitListView : View {
                     signedIn = false // Set the signedIn variable to false
                 }) {
                     Image(systemName: "arrow.left.to.line")
-                        .font(.system(size: 30))
+                        .font(.system(size: 20))
                         .foregroundColor(.white)
                 }
                 .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
@@ -41,11 +42,14 @@ struct HabitListView : View {
                 .foregroundColor(.white)
                 
                 Button(action: {
-                    
+                    showInfoAlert = true
                 }) {
                     Image(systemName: "info.circle")
                         .foregroundColor(.white)
                         .padding()
+                }
+                .alert(isPresented: $showInfoAlert) {
+                   Alert(title: Text("How does it work?"), message: Text("This app helps you form healthy habits! Based on scientific studies that show it takes about 60 days to create a new habit, this app is designed to help you achieve your goals by completing one small habit each day for 60 days.You can only do the habit once a day. By making daily habits a part of your routine, you can integrate them seamlessly into your life and create lasting change. With this app, you can track your progress, stay motivated, and form healthy habits that stick for good!"), dismissButton: .default(Text("Lets go!")))
                 }
             }
             
@@ -85,7 +89,6 @@ struct HabitListView : View {
                         showAddAlert = false
                     })
                 }
-                
             }
         }
         .onAppear {

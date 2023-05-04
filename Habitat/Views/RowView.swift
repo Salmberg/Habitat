@@ -56,7 +56,7 @@ struct RowView: View {
             
             UIApplication.shared.windows.first?.rootViewController?.present(alert, animated: true, completion: nil)
         }) {
-            Text("Utför")
+            Text("Done")
                 .foregroundColor(.white)
                 .padding(15.0)
                 .overlay(
