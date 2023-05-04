@@ -76,6 +76,7 @@ struct SignInView : View {
                                 // Sign in success
                                 signedIn = true
                             }
+                            authVM.scheduleDailyNotification(hour: 9, minute: 0, identifier: "habitReminder", title: "Habit Reminder", body: "Don't forget to tap your habits to keep your streak!")
                         }
                     }
                 }) {

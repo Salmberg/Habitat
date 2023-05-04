@@ -49,7 +49,7 @@ struct HabitListView : View {
                         .padding()
                 }
                 .alert(isPresented: $showInfoAlert) {
-                   Alert(title: Text("How does it work?"), message: Text("This app helps you form healthy habits! Based on scientific studies that show it takes about 60 days to create a new habit, this app is designed to help you achieve your goals by completing one small habit each day for 60 days.You can only do the habit once a day. By making daily habits a part of your routine, you can integrate them seamlessly into your life and create lasting change. With this app, you can track your progress, stay motivated, and form healthy habits that stick for good!"), dismissButton: .default(Text("Lets go!")))
+                   Alert(title: Text("How does it work?"), message: Text("This app helps you form healthy habits! Based on scientific studies that show it takes about 60 days to create a new habit, this app is designed to help you achieve your goals by completing one small habit each day for 60 days.You can only do the habit once a day. By making daily habits a part of your routine, you can integrate them seamlessly into your life and create lasting change. With this app, you can track your progress, stay motivated, and form healthy habits that stick for good!"), dismissButton: .default(Text("OK")))
                 }
             }
             

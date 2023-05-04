@@ -42,6 +42,8 @@ class HabitsVM : ObservableObject {
             UIApplication.shared.windows.first?.rootViewController?.present(alert, animated: true)
         }
     }
+    
+   
 
     func reloadView() {
         // Update the view here
