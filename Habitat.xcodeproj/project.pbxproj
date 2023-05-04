@@ -11,6 +11,9 @@
 		CB33C4DF29FAC97400D4D4C3 /* RowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB33C4DE29FAC97400D4D4C3 /* RowView.swift */; };
 		CB33C4E129FACA1300D4D4C3 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB33C4E029FACA1300D4D4C3 /* SignInView.swift */; };
 		CB33C4E329FACAE200D4D4C3 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB33C4E229FACAE200D4D4C3 /* ProgressBarView.swift */; };
+		CB4544152A03CA3100B8CAD4 /* PassionOne-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CB4544142A03CA3100B8CAD4 /* PassionOne-Bold.ttf */; };
+		CB4544172A03CA5E00B8CAD4 /* PermanentMarker-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CB4544162A03CA5E00B8CAD4 /* PermanentMarker-Regular.ttf */; };
+		CB4544192A03CA7E00B8CAD4 /* RubikMonoOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CB4544182A03CA7E00B8CAD4 /* RubikMonoOne-Regular.ttf */; };
 		CB88DB3729F134B80047E3EC /* HabitsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB88DB3629F134B80047E3EC /* HabitsVM.swift */; };
 		CB88DB3929F190290047E3EC /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB88DB3829F190290047E3EC /* AuthViewModel.swift */; };
 		CB9BB3CD29EFFA800075F06F /* HabitatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9BB3CC29EFFA800075F06F /* HabitatApp.swift */; };
@@ -49,6 +52,9 @@
 		CB33C4DE29FAC97400D4D4C3 /* RowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowView.swift; sourceTree = "<group>"; };
 		CB33C4E029FACA1300D4D4C3 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		CB33C4E229FACAE200D4D4C3 /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
+		CB4544142A03CA3100B8CAD4 /* PassionOne-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PassionOne-Bold.ttf"; sourceTree = "<group>"; };
+		CB4544162A03CA5E00B8CAD4 /* PermanentMarker-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PermanentMarker-Regular.ttf"; sourceTree = "<group>"; };
+		CB4544182A03CA7E00B8CAD4 /* RubikMonoOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RubikMonoOne-Regular.ttf"; sourceTree = "<group>"; };
 		CB88DB3629F134B80047E3EC /* HabitsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsVM.swift; sourceTree = "<group>"; };
 		CB88DB3829F190290047E3EC /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		CB9BB3C929EFFA800075F06F /* Habitat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Habitat.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,6 +100,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CB45441A2A03CAE400B8CAD4 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				CB4544182A03CA7E00B8CAD4 /* RubikMonoOne-Regular.ttf */,
+				CB4544142A03CA3100B8CAD4 /* PassionOne-Bold.ttf */,
+				CB4544162A03CA5E00B8CAD4 /* PermanentMarker-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		CB88DB3329F132C30047E3EC /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +145,7 @@
 		CB9BB3CB29EFFA800075F06F /* Habitat */ = {
 			isa = PBXGroup;
 			children = (
+				CB45441A2A03CAE400B8CAD4 /* Fonts */,
 				CB88DB3329F132C30047E3EC /* Views */,
 				CB9BB40B29F02B210075F06F /* Model */,
 				CB9BB40929F0067D0075F06F /* GoogleService-Info.plist */,
@@ -287,9 +304,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB4544152A03CA3100B8CAD4 /* PassionOne-Bold.ttf in Resources */,
 				CB9BB3D429EFFA810075F06F /* Preview Assets.xcassets in Resources */,
 				CB9BB3D129EFFA810075F06F /* Assets.xcassets in Resources */,
+				CB4544172A03CA5E00B8CAD4 /* PermanentMarker-Regular.ttf in Resources */,
 				CB9BB40A29F0067D0075F06F /* GoogleService-Info.plist in Resources */,
+				CB4544192A03CA7E00B8CAD4 /* RubikMonoOne-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -485,6 +505,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Habitat/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -515,6 +537,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Habitat/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

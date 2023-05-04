@@ -29,21 +29,19 @@ struct ProgressBar: View {
             Circle()
                 .stroke(lineWidth: 20.0)
                 .opacity(0.3)
-                .foregroundColor(Color.green)
+                .foregroundColor(Color.red)
             
             Circle()
                 .trim(from: 0.0, to: CGFloat(min(self.progress, 1.0)))
                 .stroke(style: StrokeStyle(lineWidth: 20.0, lineCap: .round, lineJoin: .round))
-                .foregroundColor(Color.green)
+                .foregroundColor(Color.red)
                 .rotationEffect(Angle(degrees: 270.0))
                 .animation(.linear)
             Text(habit.name)
                 .padding(.bottom, 50)
                 .bold()
         
-//            Text(String(format: "%.0f %%", min(self.progress, 1.0)*100.0))
-//                .font(.largeTitle)
-//                .bold()
+
             Text("Dagar:\(habit.days)")
                 .padding(.top, 50)
         }

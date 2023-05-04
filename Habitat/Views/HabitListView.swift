@@ -27,17 +27,27 @@ struct HabitListView : View {
     
     var body : some View {
         VStack {
-            Button(action: {
-                authVM.signOut() // Call the signOut function from the AuthViewModel
-                signedIn = false // Set the signedIn variable to false
-            }) {
-                Image(systemName: "arrow.left.to.line")
-                    .font(.system(size: 30))
-                    .foregroundColor(.white)
+            HStack {
+                Button(action: {
+                    authVM.signOut() // Call the signOut function from the AuthViewModel
+                    signedIn = false // Set the signedIn variable to false
+                }) {
+                    Image(systemName: "arrow.left.to.line")
+                        .font(.system(size: 30))
+                        .foregroundColor(.white)
+                }
+                .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                .padding(.leading, 20)
+                .foregroundColor(.white)
+                
+                Button(action: {
+                    
+                }) {
+                    Image(systemName: "info.circle")
+                        .foregroundColor(.white)
+                        .padding()
+                }
             }
-            .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
-                .padding(.leading, 20) 
-            .foregroundColor(.white)
             
             
             ScrollView {

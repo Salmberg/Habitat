@@ -31,11 +31,12 @@ struct SignInView : View {
             
             VStack {
                 Text("Habitat")
-                    .font(.largeTitle)
+                    .font(.custom("PassionOne-Bold", size: 60))
                     .bold()
                     .padding(.top,110)
                 Text("Sign in to make new habits")
-                    .font(.footnote)
+                    .font(.custom("PermanentMarker-Regular", size: 17))
+                    .padding(.bottom, 50)
                 Spacer()
                 TextField("Email", text: $email)
                     .textContentType(.emailAddress)
@@ -47,7 +48,7 @@ struct SignInView : View {
                     .padding(.top, 10)
                     .background(Color.brown)
                     .cornerRadius(20)
-                    .padding(.horizontal, 60)
+                    .padding(.horizontal, 8)
                     .padding(.vertical,10)
                     .multilineTextAlignment(.center)
                 
@@ -58,12 +59,13 @@ struct SignInView : View {
                     .padding(.top, 10)
                     .background(Color.brown)
                     .cornerRadius(20)
-                    .padding(.horizontal, 60)
+                    .padding(.horizontal, 8)
                     .padding(.vertical,5)
                     .multilineTextAlignment(.center)
                 
+                Spacer()
                 
-                
+            
                 Button(action: {
                     if !email.isEmpty && !password.isEmpty {
                         auth.signIn(withEmail: email, password: password) { result, error in
@@ -78,11 +80,17 @@ struct SignInView : View {
                     }
                 }) {
                     Text("Sign in")
-                        .background(Color(.black))
                         .foregroundColor(.white)
+                        .padding(.top, 10)
+                        .padding(.bottom, 10)
+                        .frame(maxWidth: .infinity)
+                        .background(Color.black)
                         .clipShape(Capsule())
-                        .padding(.top, 50)
                 }
+                .frame(maxWidth: .infinity, minHeight: 44)
+                .padding(.vertical, 10)
+                .padding(.top, 50)
+
                 Button(action: {
                     if !email.isEmpty && !password.isEmpty {
                         auth.createUser(withEmail: email, password: password) { result, error in
@@ -97,13 +105,20 @@ struct SignInView : View {
                     }
                 }) {
                     Text("Sign up")
-                        .background(Color(.black))
                         .foregroundColor(.white)
+                        .padding(.top, 10)
+                        .padding(.bottom, 10)
+                        .frame(maxWidth: .infinity)
+                        .background(Color.black)
                         .clipShape(Capsule())
                 }
-                .frame(height: 44)
-                .padding(.bottom, 40)
+                .frame(maxWidth: .infinity, minHeight: 44)
+                .padding(.vertical, 10)
+                
             }
+            .frame(height: 100)
+            .padding(.horizontal, 80)
+            .padding(.bottom, 30)
         }
     }
 }
